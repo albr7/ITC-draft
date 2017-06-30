@@ -23,7 +23,7 @@ function chartCreate(outputModel) {
 		},
 		xaxis: {
 			axisLabelUseCanvas: true,
-			axisLabel: "time/s",
+			axisLabel: "Time (s)",
 			position: "bottom",
 			axisLabelFontFamily: "Work Sans",
 			axisLabelFontSizePixels: 13,
@@ -33,7 +33,7 @@ function chartCreate(outputModel) {
 		},
 		yaxis: {
 			axisLabelUseCanvas: true,
-			axisLabel: "kJ per second",
+			axisLabel: "Power (kJs⁻¹)",
 			position: "left",
 			axisLabelFontFamily: "Work Sans",
 			axisLabelFontSizePixels: 13,
@@ -66,7 +66,7 @@ function chartCreate(outputModel) {
 		},
 		xaxis: {
 			axisLabelUseCanvas: true,
-			axisLabel: "molar ratio",
+			axisLabel: "Molar Ratio",
 			position: "bottom",
 			axisLabelFontFamily: "Work Sans",
 			axisLabelFontSizePixels: 13,
@@ -77,7 +77,7 @@ function chartCreate(outputModel) {
 		},
 		yaxis: {
 			axisLabelUseCanvas: true,
-			axisLabel: "kJ",
+			axisLabel: "Heat (kJ)",
 			position: "left",
 			axisLabelFontFamily: "Work Sans",
 			axisLabelFontSizePixels: 13,
@@ -113,7 +113,8 @@ function chartCreate(outputModel) {
 	});
 		// return to normal chart when double click
 	$("#flot").dblclick(function () {
-		plotObj = $.plot("#flot", chart.dataset, chart.options);
+		plotObj = $.plot("#flot", chart.dataset, chart.options1);
+		plotObj = $.plot("#flot", chart.dataset, chart.options2);
 	});
 
 	chart.replot = function(placeholder, lines) {

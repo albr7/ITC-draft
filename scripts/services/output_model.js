@@ -8,6 +8,7 @@ function outputMethod(experimentStatus) {
 
 	//CONSTANTS!
 	output.timeStep = 0.001 // time between calculation
+	output.removePoint=1000
 	output.defaultvCell = 0.000994
 	output.vCell=output.defaultvCell //volume of the cell (l)
 	
@@ -200,7 +201,7 @@ function outputMethod(experimentStatus) {
 			}else{
 			output.heatData[i]=[output.timeStep*i, (output.diffRateData[i][1]*deltH*output.vCell)];
 			}
-			if (i%10==0){
+			if (i%output.removePoint==0){
 				output.heatPlotData.push(output.heatData[i])
 			}
 			//if (i%output.stepBInj==0){
